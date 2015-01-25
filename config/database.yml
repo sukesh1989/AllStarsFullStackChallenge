@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: venturesitychallenge_production
-  username: venturesitychallenge
-  password: <%= ENV['VENTURESITYCHALLENGE_DATABASE_PASSWORD'] %>
+  username: root
+  password: galaxy7989
