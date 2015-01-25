@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: ENV['CLEARDB_DATABASE_URL']
-  username: ENV['CLEARDB_DATABASE_USERNAME']
-  password: ENV['CLEARDB_DATABASE_PASSWORDs']
+  username: ENV['CLEARDB_DATABASE_U']
+  password: ENV['CLEARDB_DATABASE_P']
