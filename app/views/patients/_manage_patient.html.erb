@@ -1,0 +1,83 @@
+<%= form_for @patient, :html => { :class => "form-horizontal patient" } do |f| %>
+
+    <% if @patient.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @patient.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+
+      <%= image_tag  "photo.jpg", :alt => "home image", :style=>"width:100px",:title => "Click here to return to Home" %>
+
+<br/>
+<div style="width:400px">
+  
+  <div class="control-group">
+    <%= f.label :firstname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :firstname, :class => 'form-control' %>
+    </div>
+    <%= error_span(@patient[:firstname]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :lastname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lastname, :class => 'form-control' %>
+    </div>
+    <%= error_span(@patient[:lastname]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :age, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :age, :class => 'form-control' %>
+    </div>
+    <%= error_span(@patient[:age]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile, :class => 'form-control' %>
+    </div>
+    <%= error_span(@patient[:mobile]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :dob, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dob, :class => 'form-control' %>
+    </div>
+    <%= error_span(@patient[:dob]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :doctor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :doctor, :class => 'form-control' %>
+    </div>
+    <%= error_span(@patient[:doctor]) %>
+  </div>
+</div>
+<br>
+<hr/>
+<%= link_to_add_fields "Add Disease record", f,:fields %>
+<hr/>
+<%= f.fields_for :fields do |builder| %>
+<%= render 'field_view', f:builder %>
+
+<%end%>
+
+
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            root_path, :class => 'btn btn-default' %>
+<br>
+<% end %>

@@ -1,0 +1,11 @@
+<fieldset>
+<div class="control-group">
+	<br>
+<%= f.text_field :name,placeholder: "enter field name" %>
+<%= f.text_field :value,placeholder: "enter field value" %>
+<%= f.hidden_field :_destroy%>
+
+<%= link_to "[remove]", '#', class: "remove_fields" %>
+</div>
+
+</fieldset>

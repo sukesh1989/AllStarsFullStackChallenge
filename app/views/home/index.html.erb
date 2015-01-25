@@ -1,0 +1,47 @@
+
+<div style="padding-top:40px" class="row">
+	 <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag  "patient.png", :alt => "home image", :title => "Click here to return to Home" %>
+      <div class="caption">
+        <h3>New Patient?</h3>
+        <p>To add new patient information to the system please click the below button</p>
+        <p><%= link_to "Add new Patient", patients_new_path ,:class=>"btn btn-primary",:role=>"button",:style=>'position:relative; left:20%;' %>
+       </p>
+      </div>
+       </div>
+        </div>
+
+
+
+ 
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+    	 <%= image_tag  "existing_patient_icon.png", :alt => "home image", :title => "Click here to return to Home" %>
+    	
+      
+      <div class="caption">
+        <h3>Existing Patient?</h3>
+        <p>To manage existing patients information please click the below button                                </p>
+        <p><%= link_to "Manage existing Patients", patients_path ,:class=>"btn btn-primary",:role=>"button",:style=>'position:relative; left:10%;' %>
+        </p>
+      </div>
+    
+
+
+ 
+    </div>
+  </div>
+   <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag  "doctor.png", :alt => "home image", :title => "Click here to return to Home" %>
+      <div class="caption">
+        <h3>Search Doctor</h3>
+        <p>To add doctor information to the system please click the below button</p>
+        <p><%= link_to "Manage doctors", doctors_path ,:class=>"btn btn-primary",:role=>"button",:style=>'position:relative; left:20%;' %></p>
+      </div>
+       </div>
+        </div>
+ 
+</div>
+

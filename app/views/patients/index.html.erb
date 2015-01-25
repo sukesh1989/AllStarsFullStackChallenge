@@ -1,0 +1,45 @@
+<%- model_class = Patient -%>
+<div class="page-header">
+  <h1 style="font-size:20px;font-weight:bold"> Patients List:</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+     
+      <th><%= model_class.human_attribute_name(:firstname) %></th>
+      <th><%= model_class.human_attribute_name(:lastname) %></th>
+ 
+      <th><%= model_class.human_attribute_name(:mobile) %></th>
+
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+   
+      <th><%= model_class.human_attribute_name(:doctor) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= link_to patient.firstname , patient_path(patient) %></td>
+        <td><%= link_to patient.lastname , patient_path(patient) %></td>
+       
+       <td><%= link_to patient.mobile , patient_path(patient) %></td>
+       
+       <td><%= link_to patient.created_at , patient_path(patient) %></td>
+       
+       <td><%= link_to patient.doctor , patient_path(patient) %></td>
+       
+       
+       
+        
+        <td>
+          <%= link_to "Manage Details",
+                      edit_patient_path(patient), :class => 'btn btn-default btn-xs' %>
+          
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

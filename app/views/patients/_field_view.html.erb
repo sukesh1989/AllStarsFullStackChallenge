@@ -1,0 +1,22 @@
+<fieldset>
+
+ <div class="control-group">
+    <%= f.label "Disease record name :  ", :class => 'control-label' %>
+   
+     <%= f.text_field :name,placeholder: "enter name" %>
+  
+
+
+<%=f.hidden_field :_destroy%>
+<%= link_to "[Delete Record]", '#', class: "remove_fields" %>
+ </div>
+
+
+<%= f.fields_for :diseasefields do |builder1| %>
+<%= render 'disease_view', f:builder1 %>
+<%end%>
+<br/>
+<%= link_to_add_fields2 "Add new field", f,:diseasefields %>
+
+<hr/>
+</fieldset>
